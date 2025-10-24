@@ -1,4 +1,4 @@
-export interface LawFirm {
+export interface Lawyer {
   id: string;
   name: string;
   about: string;
@@ -11,7 +11,7 @@ export interface LawFirm {
   updatedAt: Date;
 }
 
-export interface CreateLawFirmData {
+export interface CreateLawyerData {
   name: string;
   about: string;
   website?: string;
@@ -22,7 +22,7 @@ export interface CreateLawFirmData {
   createdAt: Date;
 }
 
-export interface UpdateLawFirmData {
+export interface UpdateLawyerData {
   name: string;
   about: string;
   website?: string;
