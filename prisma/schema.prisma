@@ -9,26 +9,30 @@ datasource db {
 }
 
 model LawFirm {
-  id String @id @default(uuid())
-  name String
-  about String
-  website String?
-  phone String?
-  email String @unique
+  id         String   @id @default(uuid())
+  name       String
+  about      String
+  website    String?
+  phone      String?
+  email      String   @unique
   isFeatured Boolean
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  lawyers Lawyer[]
 }
 
 model Lawyer {
-  id String @id @default(uuid())
-  name String
-  about String
-  website String?
-  phone String?
-  email String @unique
-  isFeatured Boolean
-  yearOfExperience Int @default(0)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id               String   @id @default(uuid())
+  name             String
+  about            String
+  website          String?
+  phone            String?
+  email            String   @unique
+  isFeatured       Boolean
+  yearOfExperience Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  lawFirmId        String?
+  LawFirm          LawFirm? @relation(fields: [lawFirmId], references: [id], onDelete: SetNull)
 }
