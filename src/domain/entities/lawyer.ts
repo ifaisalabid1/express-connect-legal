@@ -9,6 +9,7 @@ export interface Lawyer {
   yearOfExperience: number;
   createdAt: Date;
   updatedAt: Date;
+  lawFirmId?: string;
 }
 
 export interface CreateLawyerData {
@@ -20,6 +21,7 @@ export interface CreateLawyerData {
   isFeatured: boolean;
   yearOfExperience: number;
   createdAt: Date;
+  lawFirmId?: string;
 }
 
 export interface UpdateLawyerData {
@@ -31,4 +33,5 @@ export interface UpdateLawyerData {
   isFeatured: boolean;
   yearOfExperience: number;
   updatedAt: Date;
+  lawFirmId?: string;
 }

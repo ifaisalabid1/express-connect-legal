@@ -1,6 +1,6 @@
 import { CreateLawyerData, Lawyer, UpdateLawyerData } from "../entities/lawyer";
 
-export interface LawyerRepository {
+export interface ILawyerRepository {
   findAll(): Promise<Lawyer[]>;
   findById(id: string): Promise<Lawyer | null>;
   findByName(name: string): Promise<Lawyer | null>;
